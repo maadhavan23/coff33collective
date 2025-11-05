@@ -4,8 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coffee Collective — Video</title>
-    <meta name="description" content="Watch the Coffee Collective brand video — an organic, ready-to-drink Irish coffee experience." />
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <meta
+      name="description"
+      content="Watch the Coffee Collective brand video — an organic, ready-to-drink Irish coffee experience."
+    />
     <style>
       body {
         font-family: system-ui, sans-serif;
@@ -16,7 +18,8 @@
         flex-direction: column;
         min-height: 100vh;
       }
-      header, footer {
+      header,
+      footer {
         padding: 1.5rem;
         max-width: 1000px;
         margin: auto;
@@ -39,32 +42,25 @@
         padding: 3rem 1.5rem;
         text-align: center;
       }
-      .video-placeholder {
+      video {
         width: 100%;
         max-width: 800px;
-        aspect-ratio: 16 / 9;
-        background: #eaeaea;
-        border: 2px dashed #ccc;
         border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.2rem;
-        color: #666;
         margin-bottom: 2rem;
       }
       form {
-        margin-top: 3rem;
+        margin-top: 2rem;
         display: flex;
         flex-direction: column;
-        gap: 1rem;
-        align-items: center;
+        gap: 0.8rem;
+        width: 100%;
+        max-width: 400px;
       }
       input {
         padding: 0.8rem;
-        width: 250px;
         border: 1px solid #ccc;
         border-radius: 8px;
+        font-size: 1rem;
       }
       button {
         padding: 0.8rem 1.5rem;
@@ -88,10 +84,8 @@
         flex-wrap: wrap;
         gap: 1rem;
       }
-      .message {
-        font-size: 0.9rem;
-        color: green;
-        margin-top: 1rem;
+      #message {
+        margin-top: 0.5rem;
       }
     </style>
   </head>
@@ -101,7 +95,12 @@
     </header>
 
     <main>
-      <div class="video-placeholder">Video Placeholder</div>
+      <!-- 🎥 Your video file from the public folder -->
+      <video controls>
+        <source src="/public/cocktailvid.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
       <button onclick="window.location.href='index.html'">← Back to Home</button>
 
       <!-- ✳️ Signup form -->
@@ -120,12 +119,16 @@
       </nav>
     </footer>
 
-    <script>
-      // 🧠 Replace with your own Supabase project info
-      const SUPABASE_URL = "https://YOUR-PROJECT.supabase.co";
-      const SUPABASE_ANON_KEY = "YOUR_ANON_KEY";
+    <!-- ✅ Supabase client library -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-      const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    <script>
+      // 🧠 Replace with your actual Supabase project info
+      const SUPABASE_URL = "https://hryamtpiqdxymxyagsvq.supabase.co";
+      const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhyeWFtdHBpcWR4eW14eWFnc3ZxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIzNDkxMTEsImV4cCI6MjA3NzkyNTExMX0.NP8ayaNyr6CiXxb6Xof2yjkVahFe1EZyFTNmQt_OHcs";
+
+      // Create Supabase client
+      const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
       const form = document.getElementById("signup-form");
       const message = document.getElementById("message");
@@ -142,7 +145,7 @@
           return;
         }
 
-        // 🧩 Insert data safely (Supabase uses parameterized queries)
+        // 🧩 Insert data safely — Supabase uses parameterized queries (SQL injection safe)
         const { error } = await supabase
           .from("subscribers")
           .insert([{ name, email }]);
