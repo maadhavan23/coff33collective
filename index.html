@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee Collective — Organic RTD Irish Coffee</title>
+    <meta name="description" content="Minimalist landing page for a ready‑to‑drink, organic, low‑calorie, low‑sugar Irish‑coffee inspired beverage." />
+    <style>
+      body {font-family: system-ui, sans-serif; margin: 0; background: #fff; color: #111;}
+      header, footer {padding: 1.5rem; max-width: 1000px; margin: auto;}
+      header {display: flex; justify-content: space-between; align-items: center;}
+      a {color: inherit; text-decoration: none;}
+      .hero {display: grid; gap: 2rem; max-width: 1000px; margin: auto; padding: 4rem 1.5rem; grid-template-columns: 1fr 1fr; align-items: center;}
+      .hero h1 {font-size: 2.5rem; line-height: 1.2; margin: 0;}
+      .hero p {color: #555;}
+      .cta {margin-top: 1.5rem;}
+      .cta input {padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px; width: 70%;}
+      .cta button {padding: 0.8rem 1.2rem; border: none; border-radius: 8px; background: #111; color: #fff; margin-left: 0.5rem; cursor: pointer;}
+      .features {background: #fafafa; border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 3rem 1.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; max-width: 1000px; margin: auto;}
+      .features h2 {margin: 0 0 0.5rem 0; font-size: 1.25rem;}
+      footer {font-size: 0.9rem; color: #666; border-top: 1px solid #eee; margin-top: 3rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;}
+      svg {max-width: 100%; height: auto;}
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="#"><strong>Coffee Collective</strong></a>
+      <a href="video.html">Video!!</a>
+      <a href="#notify">Get notified</a>
+    </header>
+
+    <section class="hero">
+      <div>
+        <p style="font-size: 0.8rem; letter-spacing: 1px; color: #666;">New • RTD • Organic • Low Cal • Low Sugar</p>
+        <h1>Irish coffee,<br/>bottled for real life.</h1>
+        <p>Meet <strong>Coffee Collective</strong> — a minimalist ready‑to‑drink, organic, low‑cal, low‑sugar Irish‑coffee inspired beverage. Classic flavor. Clean label. Zero fuss.</p>
+        <div class="cta" id="notify">
+          <form>
+            <input type="email" placeholder="you@email.com" required />
+            <button type="submit">Join the list</button>
+          </form>
+          <p style="font-size: 0.7rem; color: #777;">No spam. Unsubscribe anytime.</p>
+        </div>
+      </div>
+      <div>
+        <svg viewBox="0 0 280 520">
+          <defs>
+            <linearGradient id="can" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#f8f8f8" />
+              <stop offset="100%" stop-color="#eaeaea" />
+            </linearGradient>
+          </defs>
+          <rect x="20" y="20" width="240" height="480" rx="28" fill="url(#can)" stroke="#dcdcdc" />
+          <rect x="20" y="20" width="240" height="24" rx="12" fill="#d1d1d1" />
+          <rect x="40" y="120" width="200" height="280" rx="18" fill="#ffffff" stroke="#e6e6e6" />
+          <text x="140" y="200" text-anchor="middle" font-size="18" fill="#0a0a0a" letter-spacing="2">COFFEE</text>
+          <text x="140" y="230" text-anchor="middle" font-size="34" font-weight="700" fill="#0a0a0a" letter-spacing="3">COLLECTIVE</text>
+          <text x="140" y="270" text-anchor="middle" font-size="12" fill="#6b7280" letter-spacing="2">ORGANIC • LOW‑CAL • LOW‑SUGAR</text>
+          <text x="140" y="310" text-anchor="middle" font-size="14" fill="#0a0a0a" letter-spacing="1">IRISH COFFEE</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="features">
+      <div>
+        <h2>Clean label</h2>
+        <p>Only thoughtful, high‑quality organic ingredients. Nothing extra.</p>
+      </div>
+      <div>
+        <h2>Balanced by design</h2>
+        <p>Crafted to be light, smooth, and satisfying — great chilled or over ice.</p>
+      </div>
+      <div>
+        <h2>Ready anytime</h2>
+        <p>A modern take on a classic. Perfect for slow mornings and spontaneous adventures.</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 Coffee Collective. All rights reserved.</p>
+      <nav>
+        <a href="#">Privacy</a> · <a href="#">Contact</a> · <a href="#">Instagram</a>
+      </nav>
+    </footer>
+  </body>
+</html>
